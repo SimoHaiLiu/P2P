@@ -1,0 +1,5 @@
+test/
+venv/
+__pycache__/
+.idea/
+qupital_crawler/seller_report/

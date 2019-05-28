@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ auction['auction_no'] }}
+{% endblock %}
+
+{% block content %}
+    <h2>Basic Information</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Auction No</th>
+                <th>Seller No</th>
+                <th>Obligor Name</th>
+                <th>Currency</th>
+                <th>Invoice Amount</th>
+                <th>No of Days</th>
+                <th>Average Late Days</th>
+                <th>Credit Insurance</th>
+                <th>Obligor Notification</th>
+                <th>Remaining Time</th>
+                <th>Suggested Basis Point</th>
+                <th>Seller Qupital Rating</th>
+                <th>Obligor Qupital Rating</th>
+                <th>Expected Payment Date</th>
+                <th>Buy Now Annualized Yield</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ auction['auction_no'] }}</td>
+            <td>{{ auction['seller_no'] }}</td>
+            <td>{{ auction['obligor_name'] }}</td>
+            <td>{{ auction['currency'] }}</td>
+            <td>{{ auction['invoice_amount'] }}</td>
+            <td>{{ auction['no_of_days'] }}</td>
+            <td>{{ auction['ss_average_late_day'] }}</td>
+            <td>{{ auction['credit_insurance'] }}</td>
+            <td>{{ auction['obligor_notification'] }}</td>
+            <td>{{ auction['remaining_time'] }}</td>
+            <td>{{ auction['suggested_basis_point'] }}</td>
+            <td>{{ auction['seller_qupital_rating'] }}</td>
+            <td>{{ auction['obligor_qupital_rating'] }}</td>
+            <td>{{ auction['expected_payment_date'] }}</td>
+            <td>{{ auction['buy_now_annualized_yield'] }}</td>
+        </tr>
+    </table>
+
+    <h2>Seller Statistic</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Successful Auction</th>
+                <th>Remitted Auction</th>
+                <th>Outstanding Auction</th>
+                <th>Auction Total Invoice Amount In USD</th>
+                <th>Auction Total Advance Amount In USD</th>
+                <th>Auction Total Invoice Amount In HKD</th>
+                <th>Auction Total Advance Amount In HKD</th>
+                <th>Average Late Day</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ auction['ss_successful_action'] }}</td>
+            <td>{{ auction['ss_remitted_auction'] }}</td>
+            <td>{{ auction['ss_outstanding_auction'] }}</td>
+            <td>{{ auction['ss_auction_total_invoice_amount_in_usd'] }}</td>
+            <td>{{ auction['ss_auction_total_advance_amount_in_usd'] }}</td>
+            <td>{{ auction['ss_auction_total_invoice_amount_in_hkd'] }}</td>
+            <td>{{ auction['ss_auction_total_advance_amount_in_hkd'] }}</td>
+            <td>{{ auction['ss_average_late_day'] }}</td>
+        </tr>
+    </table>
+
+    <h2>Seller-Obligor Statistic</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Successful Auction</th>
+                <th>Remitted Auction</th>
+                <th>Outstanding Auction</th>
+                <th>Auction Total Invoice Amount In USD</th>
+                <th>Auction Total Advance Amount In USD</th>
+                <th>Auction Total Invoice Amount In HKD</th>
+                <th>Auction Total Advance Amount In HKD</th>
+                <th>Average Late Day</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ auction['sos_successful_action'] }}</td>
+            <td>{{ auction['sos_remitted_auction'] }}</td>
+            <td>{{ auction['sos_outstanding_auction'] }}</td>
+            <td>{{ auction['sos_auction_total_invoice_amount_in_usd'] }}</td>
+            <td>{{ auction['sos_auction_total_advance_amount_in_usd'] }}</td>
+            <td>{{ auction['sos_auction_total_invoice_amount_in_hkd'] }}</td>
+            <td>{{ auction['sos_auction_total_advance_amount_in_hkd'] }}</td>
+            <td>{{ auction['sos_average_late_day'] }}</td>
+        </tr>
+    </table>
+
+    <h2>Seller Report</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Latest Share Capital</th>
+                <th>Second Latest Share Capital</th>
+                <th>Client</th>
+                <th>Establishment of Relationship</th>
+                <th>Revenue</th>
+                <th>Revenue Currency</th>
+                <th>Cash and Bank Balance</th>
+                <th>Bank Borrowing</th>
+                <th>Total Equity</th>
+                <th>Gearing Ratio</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ auction['latest_share_capital'] }}</td>
+            <td>{{ auction['second_latest_share_capital'] }}</td>
+            <td>{{ auction['client'] }}</td>
+            <td>{{ auction['establishment_of_relationship'] }}</td>
+            <td>{{ auction['revenue'] }}</td>
+            <td>{{ auction['currency'] }}</td>
+            <td>{{ auction['cash_and_bank_balance'] }}</td>
+            <td>{{ auction['bank_borrowing'] }}</td>
+            <td>{{ auction['total_equity'] }}</td>
+            <td>{{ auction['gearing_ratio'] }}</td>
+        </tr>
+    </table>
+
+    <h2>Bidding Information</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Advanced Amount</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{ auction['status'] }}</td>
+            <td>{{ auction['invoice_amount'] }}</td>
+            <td>{{ auction['net_return'] }}</td>
+        </tr>
+    </table>
+{% endblock %}
+

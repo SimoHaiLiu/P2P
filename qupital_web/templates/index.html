@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Passing All Criteria</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Obligor Name</th>
+                <th>Currency</th>
+                <th>Advanced Amount</th>
+                <th>Net Return(%)</th>
+                <th>No.of Days</th>
+                <th>Detial(Auction No.)</th>
+            </tr>
+        </thead>
+        {% for auction in passing_all_criteria %}
+            <tr>
+                <td>{{ auction['obligor_name'] }}</td>
+                <td>{{ auction['currency'] }}</td>
+                <td>{{ auction['invoice_amount'] }}</td>
+                <td>{{ auction['net_return'] }}</td>
+                <td>{{ auction['no_of_days'] }}</td>
+                <td><a href="detail/{{ auction['auction_no'] }}">{{ auction['auction_no'] }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Passing the Critical Criteria</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Obligor Name</th>
+                <th>Currency</th>
+                <th>Advanced Amount</th>
+                <th>Net Return(%)</th>
+                <th>No.of Days</th>
+                <th>Detial(Auction No.)</th>
+            </tr>
+        </thead>
+        {% for auction in passing_the_critical_criteria %}
+            <tr>
+                <td>{{ auction['obligor_name'] }}</td>
+                <td>{{ auction['currency'] }}</td>
+                <td>{{ auction['invoice_amount'] }}</td>
+                <td>{{ auction['net_return'] }}</td>
+                <td>{{ auction['no_of_days'] }}</td>
+                <td><a href="detail/{{ auction['auction_no'] }}">{{ auction['auction_no'] }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>All Past Auctions</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Obligor Name</th>
+                <th>Currency</th>
+                <th>Advanced Amount</th>
+                <th>Net Return(%)</th>
+                <th>No.of Days</th>
+                <th>Detial(Auction No.)</th>
+            </tr>
+        </thead>
+        {% for auction in auctions %}
+            <tr>
+                <td>{{ auction['obligor_name'] }}</td>
+                <td>{{ auction['currency'] }}</td>
+                <td>{{ auction['invoice_amount'] }}</td>
+                <td>{{ auction['net_return'] }}</td>
+                <td>{{ auction['no_of_days'] }}</td>
+                <td><a href="detail/{{ auction['auction_no'] }}">{{ auction['auction_no'] }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
