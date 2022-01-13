@@ -22,7 +22,7 @@ openpyxl==2.6.2
 pandas==0.24.2
 pdfminer.six==20181108
 pdfplumber==0.5.12
-Pillow==6.0.0
+Pillow==9.0.0
 pycryptodome==3.8.1
 pymongo==3.8.0
 python-dateutil==2.8.0
